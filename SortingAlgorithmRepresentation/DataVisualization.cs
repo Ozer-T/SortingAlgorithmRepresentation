@@ -9,13 +9,16 @@ using System.Windows.Forms;
 namespace SortingAlgorithmRepresentation
 {
     class DataVisualization
-    {//        private Pen colorfulPen;
+    {
 
         public void DrawLinesWithShowingStartAndEndCaps(PaintEventArgs e, Point StartPosition, Point EndPosition, Brush brushColor, float brushWidth)
         {
-            Pen MyPen = new Pen(brushColor, brushWidth);
-            MyPen.StartCap = System.Drawing.Drawing2D.LineCap.RoundAnchor;
-            MyPen.EndCap = System.Drawing.Drawing2D.LineCap.ArrowAnchor;
+            Pen MyPen = new Pen(brushColor, brushWidth)
+            {
+                StartCap = System.Drawing.Drawing2D.LineCap.RoundAnchor,
+                EndCap = System.Drawing.Drawing2D.LineCap.ArrowAnchor
+            };
+
             e.Graphics.DrawLine(MyPen, StartPosition, EndPosition);
             MyPen.Dispose();
         }

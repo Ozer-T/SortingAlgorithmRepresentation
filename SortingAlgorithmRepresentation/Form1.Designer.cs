@@ -124,6 +124,7 @@
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(487, 23);
             this.progressBar1.TabIndex = 4;
+
             // 
             // canvas
             // 

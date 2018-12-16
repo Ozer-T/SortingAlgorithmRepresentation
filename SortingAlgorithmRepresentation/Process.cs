@@ -40,7 +40,7 @@ namespace SortingAlgorithmRepresentation
         public void Random_Numbers_For_Colors( short[] Color_R,  short[] Color_G,  short[] Color_B, Random rnd)
         {
 
-            Color_R[0] = 5;//(short)Math.Round(0.0f + rnd.Next(255));
+            Color_R[0] = (short)Math.Round(0.0f + rnd.Next(255));
             Color_G[0] = (short)Math.Round(0.0f + rnd.Next(255));
             Color_B[0] = (short)Math.Round(0.0f + rnd.Next(255));
 

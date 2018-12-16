@@ -1,16 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SortingAlgorithmRepresentation
 {
     class SortingAlgorithms
     {
-        public void Counting_Sort_Algorithm(ref int[] X_Values, ref int[] Y_Values)
+        
+        public void Counting_Sort_Algorithm(int[] X_Values,int[] Y_Values)
         {
+            
 
+            //dataVisualizer.DrawLineWithTexture(@"C:\Users\Catorsem\Desktop\texture.png", 7, paintevent);
+               //--------------------------//
 
             /*
             // find smallest and largest value
@@ -48,13 +54,13 @@ namespace SortingAlgorithmRepresentation
 
         }
 
-        public void Merge_Sort_Algorithm(ref int[] X_Values, ref int[] Y_Values)
+        public void Merge_Sort_Algorithm(int[] X_Values,int[] Y_Values)
         {
 
 
 
         }
-        public void Bubble_Sort_Algorithm(ref int[] X_Values, ref int[] Y_Values)
+        public void Bubble_Sort_Algorithm(int[] X_Values,int[] Y_Values)
         {
 
 
