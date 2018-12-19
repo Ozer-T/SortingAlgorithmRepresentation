@@ -44,9 +44,9 @@
             // cmb_Sorting_Algorithms
             // 
             this.cmb_Sorting_Algorithms.FormattingEnabled = true;
-            this.cmb_Sorting_Algorithms.Location = new System.Drawing.Point(157, 708);
+            this.cmb_Sorting_Algorithms.Location = new System.Drawing.Point(157, 926);
             this.cmb_Sorting_Algorithms.Name = "cmb_Sorting_Algorithms";
-            this.cmb_Sorting_Algorithms.Size = new System.Drawing.Size(177, 21);
+            this.cmb_Sorting_Algorithms.Size = new System.Drawing.Size(242, 21);
             this.cmb_Sorting_Algorithms.TabIndex = 0;
             // 
             // button2
@@ -54,7 +54,7 @@
             this.button2.BackColor = System.Drawing.Color.Red;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(690, 703);
+            this.button2.Location = new System.Drawing.Point(804, 921);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(103, 30);
             this.button2.TabIndex = 1;
@@ -64,7 +64,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(1284, 658);
+            this.textBox1.Location = new System.Drawing.Point(1487, 878);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 2;
@@ -73,7 +73,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(12, 708);
+            this.label1.Location = new System.Drawing.Point(12, 926);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 20);
             this.label1.TabIndex = 3;
@@ -83,7 +83,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(340, 708);
+            this.label2.Location = new System.Drawing.Point(454, 926);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 20);
             this.label2.TabIndex = 3;
@@ -91,18 +91,18 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(461, 708);
+            this.textBox2.Location = new System.Drawing.Point(575, 926);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 2;
-            this.textBox2.Text = "15";
+            this.textBox2.Text = "1500";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(616, 708);
+            this.label3.Location = new System.Drawing.Point(730, 926);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 20);
             this.label3.TabIndex = 3;
@@ -112,7 +112,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(829, 708);
+            this.label4.Location = new System.Drawing.Point(978, 926);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 20);
             this.label4.TabIndex = 3;
@@ -120,11 +120,10 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(915, 707);
+            this.progressBar1.Location = new System.Drawing.Point(1064, 925);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(487, 23);
+            this.progressBar1.Size = new System.Drawing.Size(543, 23);
             this.progressBar1.TabIndex = 4;
-
             // 
             // canvas
             // 
@@ -132,14 +131,14 @@
             this.canvas.Controls.Add(this.textBox1);
             this.canvas.Location = new System.Drawing.Point(15, 12);
             this.canvas.Name = "canvas";
-            this.canvas.Size = new System.Drawing.Size(1387, 681);
+            this.canvas.Size = new System.Drawing.Size(1592, 903);
             this.canvas.TabIndex = 5;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1414, 742);
+            this.ClientSize = new System.Drawing.Size(1619, 955);
             this.Controls.Add(this.canvas);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label4);

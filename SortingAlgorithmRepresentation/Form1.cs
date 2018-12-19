@@ -36,6 +36,7 @@ namespace SortingAlgorithmRepresentation
         public short[] ColorRED, ColorGREEN, ColorBLUE;
         public static int[] randomcizgiler_x, randomcizgiler_y;
         public static double[] Length_of_The_Lines, SORTED_Length_of_The_Lines;
+        float[,,] LengthandXandY;
         public Graphics g;
         Rectangle canvasRectangle;
         Process Myprocess;
@@ -91,6 +92,8 @@ namespace SortingAlgorithmRepresentation
             cmb_Sorting_Algorithms.Items.Add("Counting Sort");
             cmb_Sorting_Algorithms.Items.Add("Merge Sort");
             cmb_Sorting_Algorithms.Items.Add("Bubble Sort");
+            cmb_Sorting_Algorithms.Items.Add("Visualize the array sequentialy (Not Sorting)");
+            cmb_Sorting_Algorithms.Items.Add("Visualize an array (Not Sorting)");
         }
 
 
@@ -120,18 +123,25 @@ namespace SortingAlgorithmRepresentation
                 ColorRED = new short[LINE_COUNT];
                 ColorGREEN = new short[LINE_COUNT];
                 ColorBLUE = new short[LINE_COUNT];
-
-                //MessageBox.Show("Line count : " + LINE_COUNT);
-
-                Myprocess.RandomNumbers(ref randomcizgiler_x, ref randomcizgiler_y, MARGIN_X, MARGIN_Y, LINE_COUNT, rnd, canvas.Width, canvas.Height);
-
+                //LengthandXandY = new float[LINE_COUNT,LINE_COUNT,LINE_COUNT];
                 
+                Myprocess.RandomNumbers( randomcizgiler_x,  randomcizgiler_y, MARGIN_X, MARGIN_Y, LINE_COUNT, rnd, canvas.Width, canvas.Height);
                 Myprocess.Random_Numbers_For_Colors( ColorRED,  ColorGREEN,  ColorBLUE, rnd);
-                
+
+                Myprocess.FindTheLengthsOfTheLines(Length_of_The_Lines, randomcizgiler_x, randomcizgiler_y);
+                //  Array.Copy(Length_of_The_Lines, Length_of_The_Lines[,,],0);
+
+               // Array.Sort(randomcizgiler_x);
+               // Array.Sort(randomcizgiler_y);
                 SortingAlgorithmSelection(cmb_Sorting_Algorithms.SelectedIndex);
 
-                //                VisualizerThread.Start();
-                VisualizeTheArray();
+
+               
+
+
+
+
+                
             }
             else
             {
@@ -146,7 +156,7 @@ namespace SortingAlgorithmRepresentation
 
         }
 
-        private void VisualizeTheArray()
+        private void VisualizeTheArray(int[] randomcizgiler_x,int [] randomcizgiler_y)
         {
             paintevent = new PaintEventArgs(g, canvasRectangle);
             canvasRectangle = new Rectangle(canvas.Location.X, canvas.Location.Y, canvas.Width, canvas.Height);
@@ -154,7 +164,7 @@ namespace SortingAlgorithmRepresentation
 
             Brush drawingBrush;
             Point point_end;
-            Point point_start = new Point(0, 0);
+            Point point_start = new Point(canvasRectangle.Width / 2, canvasRectangle.Height / 2);
             
             DataVisualization dataVisualizer = new DataVisualization();
 
@@ -169,32 +179,67 @@ namespace SortingAlgorithmRepresentation
                 progressBar1.Refresh();
             }
             
+        } 
+
+        private void VisualizeTheArraySequential(int[] randomcizgiler_x, int[] randomcizgiler_y)
+        {
+            paintevent = new PaintEventArgs(g, canvasRectangle);
+            canvasRectangle = new Rectangle(canvas.Location.X, canvas.Location.Y, canvas.Width, canvas.Height);
+            progressBar1.Value = 0;
+
+            Brush drawingBrush;
+            Point point_end;
+
+            DataVisualization dataVisualizer = new DataVisualization();
+
+
+            for (int i = 1; i < randomcizgiler_x.Length; i++)
+            {
+                Point point_start = new Point(randomcizgiler_x[i-1],randomcizgiler_y[i-1]);
+                point_end = new Point(randomcizgiler_x[i], randomcizgiler_y[i]);
+                drawingBrush = new SolidBrush(Color.FromArgb(Convert.ToInt32(ColorRED[i]), Convert.ToInt32(ColorBLUE[i]), Convert.ToInt32(ColorBLUE[i])));
+                dataVisualizer.DrawLinesWithShowingStartAndEndCaps(paintevent, point_start, point_end, drawingBrush, 2.0f);
+
+                progressBar1.Increment(1);
+                progressBar1.Refresh();
+            }
+
         }
+
 
         private void SortingAlgorithmSelection(int selectedindex)
         {
             
             SortingAlgorithms sortAlg = new SortingAlgorithms();
-             
+
             switch (selectedindex)
             {
                 case 0:
                     {
-                        
-                        //MessageBox.Show("You have selected the COUNTING SORT");
-                        sortAlg.Counting_Sort_Algorithm(randomcizgiler_x,randomcizgiler_y);
+                        sortAlg.Counting_Sort_Algorithm(randomcizgiler_x, randomcizgiler_y);
                         break;
                     }
                 case 1:
                     {
-                        sortAlg.Merge_Sort_Algorithm(randomcizgiler_x,randomcizgiler_y);
+                        sortAlg.Merge_Sort_Algorithm(randomcizgiler_x, randomcizgiler_y);
                         break;
                     }
                 case 2:
                     {
-                        sortAlg.Bubble_Sort_Algorithm(randomcizgiler_x,randomcizgiler_y);
+                        sortAlg.Bubble_Sort_Algorithm(randomcizgiler_x, randomcizgiler_y);
                         break;
                     }
+                case 3:
+                    {
+                        VisualizeTheArraySequential(randomcizgiler_x, randomcizgiler_y);//This draws the lines between each lines 
+                        break;
+                    }
+                case 4:
+                    {
+                        VisualizeTheArray(randomcizgiler_x, randomcizgiler_y);
+                        break;
+                    }
+            
             }
 
         }

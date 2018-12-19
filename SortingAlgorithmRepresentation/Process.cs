@@ -8,7 +8,7 @@ namespace SortingAlgorithmRepresentation
 {
     class Process
     {
-        public void FindTheLengthsOfTheLines(ref double[] Length_of_The_Lines, float[] randomcizgiler_x, float[] randomcizgiler_y)
+        public void FindTheLengthsOfTheLines( double[] Length_of_The_Lines, int[] randomcizgiler_x, int[] randomcizgiler_y)
         {
             for (int i = 0; i < Length_of_The_Lines.Length; i++)
             {
@@ -17,7 +17,7 @@ namespace SortingAlgorithmRepresentation
         }
 
 
-        public void RandomNumbers(ref int[] randomcizgiler_x, ref int[] randomcizgiler_y, int MariginX, int MariginY, int LineCount, Random rnd, int CANVAS_WIDTH, int CANVAS_HEIGHT)
+        public void RandomNumbers( int[] randomcizgiler_x,  int[] randomcizgiler_y, int MariginX, int MariginY, int LineCount, Random rnd, int CANVAS_WIDTH, int CANVAS_HEIGHT)
         {
             randomcizgiler_y[0] = rnd.Next(0, CANVAS_HEIGHT);
 
