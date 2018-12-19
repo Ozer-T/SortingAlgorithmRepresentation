@@ -1,16 +1,8 @@
-﻿//LINECOUNT A BAŞTA GIRMEDIĞINDEN HEP 1000 TANE ÇIZGI CIZIYOR. Ve Sorting Yapmıyor (COunting i ayarlamadım daha.)//line count a default olarak ihtiyacı var
-// ama bu benim işime gelmiyor. gel biz en  iyisi list kullanalım. oradan diziye çekeriz ama o zaman da verimsiz olur.
-//Dizilerin hepsine bak bakalım oraya koymamıza gerek var mı diye
-//textboxlardan hepsini kullandığına emin ol!
-//Hadi ben kaçtım pampa!!
-
-//Counting sort ile uğraş
-//button2 click in için idoldur.
-//algoritmaların içini kendin yazarak doldur.
-//testlerini yap 
-//yorum satırı olan her yere bak da kısalt veya sil oraları"
-
-
+﻿//fill the sorting algorithms
+//Use thread to draw and by doing that use start-stop button to sudden interference to the process (May be added additional button fot that either).
+//Handle with the exceptions like entering a nonnumeric character to the input!
+//Add more sortingAlgorithms as methods and also to combobox.
+//make the form compatible with all screen sizes on Windows!
 
 using System;
 using System.Collections.Generic;
@@ -27,7 +19,7 @@ namespace SortingAlgorithmRepresentation
 {
     public partial class Form1 : Form
     {
-        
+
         private bool buttonState = false;//Program has not actived yet.
         public Random rnd = new Random((int)DateTime.Now.Ticks);
 
@@ -36,55 +28,17 @@ namespace SortingAlgorithmRepresentation
         public short[] ColorRED, ColorGREEN, ColorBLUE;
         public static int[] randomcizgiler_x, randomcizgiler_y;
         public static double[] Length_of_The_Lines, SORTED_Length_of_The_Lines;
-        float[,,] LengthandXandY;
         public Graphics g;
         Rectangle canvasRectangle;
         Process Myprocess;
         PaintEventArgs paintevent;
-        
+       
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
 
-        
-
-
-
-        /*
-        Int32 PEN_THICKNESS = 4;
-        PEN_THICKNESS = Convert.ToInt32(txt_PenThickness.Text);
-
-
-
-
-        //Array.Sort<float>(randomcizgiler_x);
-        Array.Sort<float>(randomcizgiler_y);
-
-        FindTheLengthsOfTheLines(ref Length_of_The_Lines, randomcizgiler_x, randomcizgiler_y);
-        counting_Sort(Length_of_The_Lines, ref SORTED_Length_of_The_Lines);
-
-
-
-
-
-        for (int i = 1; i<Length_of_The_Lines.Length; i++)
-        {
-            colorfulPen.Color = Color.FromArgb(255, (int) Color_R[i - 1], (int)Color_G[i - 1], (int) Color_B[i - 1]);
-        //g.DrawLine(colorfulPen, randomcizgiler_x[i - 1], randomcizgiler_y[i - 1], randomcizgiler_x[i], randomcizgiler_y[i]);//Bunu aktif hale getirirsen çizgiler RASTGELE yerlerde olur.
-        g.DrawLine(colorfulPen, canvas.Width/2,canvas.Height/2, randomcizgiler_x[i], randomcizgiler_y[i]);//Bunu aktif hale getirirsen çizgiler MERKEZDE olur.
-
-
-
-            //Thread.Sleep(1);
-            
-
-
-
-    */
-
-            
         public Form1()
         {
             InitializeComponent();
@@ -99,8 +53,7 @@ namespace SortingAlgorithmRepresentation
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-//            Thread VisualizerThread = new Thread(VisualizeTheArray);
-            
+
             Myprocess = new Process();
 
             buttonState = !buttonState;
@@ -115,7 +68,7 @@ namespace SortingAlgorithmRepresentation
 
 
                 progressBar1.Maximum = LINE_COUNT;
-                
+
                 randomcizgiler_x = new int[LINE_COUNT];
                 randomcizgiler_y = new int[LINE_COUNT];
                 Length_of_The_Lines = new double[LINE_COUNT];
@@ -123,25 +76,14 @@ namespace SortingAlgorithmRepresentation
                 ColorRED = new short[LINE_COUNT];
                 ColorGREEN = new short[LINE_COUNT];
                 ColorBLUE = new short[LINE_COUNT];
-                //LengthandXandY = new float[LINE_COUNT,LINE_COUNT,LINE_COUNT];
-                
-                Myprocess.RandomNumbers( randomcizgiler_x,  randomcizgiler_y, MARGIN_X, MARGIN_Y, LINE_COUNT, rnd, canvas.Width, canvas.Height);
-                Myprocess.Random_Numbers_For_Colors( ColorRED,  ColorGREEN,  ColorBLUE, rnd);
 
+
+                Myprocess.RandomNumbers(randomcizgiler_x, randomcizgiler_y, MARGIN_X, MARGIN_Y, LINE_COUNT, rnd, canvas.Width, canvas.Height);
+                Myprocess.Random_Numbers_For_Colors(ColorRED, ColorGREEN, ColorBLUE, rnd);
                 Myprocess.FindTheLengthsOfTheLines(Length_of_The_Lines, randomcizgiler_x, randomcizgiler_y);
-                //  Array.Copy(Length_of_The_Lines, Length_of_The_Lines[,,],0);
 
-               // Array.Sort(randomcizgiler_x);
-               // Array.Sort(randomcizgiler_y);
                 SortingAlgorithmSelection(cmb_Sorting_Algorithms.SelectedIndex);
 
-
-               
-
-
-
-
-                
             }
             else
             {
@@ -152,9 +94,11 @@ namespace SortingAlgorithmRepresentation
                 textBox1.Text = "DEMO STOPPED";
             }
 
-            //   nesnem.DrawLineWithTexture. += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+
 
         }
+        
+
 
         private void VisualizeTheArray(int[] randomcizgiler_x,int [] randomcizgiler_y)
         {

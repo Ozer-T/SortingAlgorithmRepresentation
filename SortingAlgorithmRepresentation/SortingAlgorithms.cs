@@ -13,39 +13,7 @@ namespace SortingAlgorithmRepresentation
         
         public void Counting_Sort_Algorithm(int[] X_Values,int[] Y_Values)
         {
-           
-            /*
-            // find smallest and largest value
-            double minVal = X_Values[0];
-            double maxVal = X_Values[0];
-            for (int i = 1; i < X_Values.Length; i++)
-            {
-                if (X_Values[i] < minVal) minVal = X_Values[i];
-                else if (X_Values[i] > maxVal) maxVal = X_Values[i];
-            }
 
-            // init array of frequencies
-            float[] counts = new float[(int)(maxVal - minVal + 1)];
-
-            // init the frequencies
-            for (int i = 0; i < X_Values.Length; i++)
-            {
-                counts[(int)(X_Values[i] - minVal)]++;
-            }
-
-            // recalculate
-            counts[0]--;
-            for (int i = 1; i < counts.Length; i++)
-            {
-                counts[i] = counts[i] + counts[i - 1];
-            }
-
-            // Sort the array
-            for (int i = X_Values.Length - 1; i >= 0; i--)
-            {
-                Y_Values[(int)(counts[(int)(X_Values[i] - minVal)]--)] = X_Values[i];
-            }
-            */
 
 
         }
